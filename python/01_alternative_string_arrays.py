@@ -36,4 +36,9 @@ def alternative_string_arrays(first_str:str,second_str:str)->str:
 
 if __name__ == "__main__":
     print(alternative_string_arrays("AB", "XYZ"), end=" ") 
-    
+ 
+"""
+Output:
+A X B Y C D
+"""   
+

@@ -16,3 +16,6 @@ const result = alternative_string_array("ABCD", "XY")
 console.log(result)
 
 
+//Output:
+//A X B Y C D
+
