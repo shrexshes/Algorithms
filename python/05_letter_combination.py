@@ -25,7 +25,6 @@ def letterCombination(digits:str)->List[str]:
 
     #backtracking helper
     def backtrack(index:int,path:List[str])->None:
-        print(f"index {index}")
         if index==len(digits):
             result.append(''.join(path)) # convert lists to string and add it to result
             return
@@ -33,21 +32,16 @@ def letterCombination(digits:str)->List[str]:
         # get current digits and its corresponding letters
         current_digit=digits[index];
         letters=hash_map[current_digit]
-        print(f" current digit : {current_digit}")
-        print(f" letter_up : {letters}")
 
         for letter in letters:
-            print(f"letter : {letter}")
             path.append(letter)
-            print(f"path: {path}")
             backtrack(index + 1, path)
             path.pop()
-        print("----------------")
         
-    
     backtrack(0,[])
+    print(result)
     return result
 
-letterCombination("23")
+letterCombination("236")
 
 
