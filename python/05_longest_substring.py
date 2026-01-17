@@ -13,4 +13,4 @@ def longestSubstring(s:str)->int:
         res=max(res,r-l+1) #max(0,0-0+1) , max(1,1-0+1), max(2,2-0+1) , max(3,3-1 +1)
         print("res:",res) #1,2,3,3,
 
-longestSubstring("abcabc")
+longestSubstring("abcabcbb")
