@@ -15,18 +15,20 @@ def productOfArray(nums:List[int])->int:
         2nd we do prefix : multiplying every number in a list from right to left [24,24,12,4]
         3rd we take another list and we take the the value that comes befor it in prefix and take a value that comes after it in a postfix [24,12,8,6] 
     '''
-    postfix =[]
-    prefix=[]
 
-    for i,n in enumerate(nums):
-        print("index at:",i)
-        print("number at:",n)
-        if i==0:
-            postfix.append(n)
-        else: postfix.append(n * postfix[i-1])
+    res=[1] * len(nums)# res=4
+    prefix=1
+    for i in range(len(nums)): #i=0,i=1,i=2
+        res[i]=prefix # prefix=1 ,1,2,6
+        print(res)
+        prefix *= nums[i] #prefix=1*1, prefix=1*2 , prefix=2*3,prefix=6*4 stop
+    print(res)
+    postfix=1
+    for i in range(len(nums)-1,-1,-1):
+        res[i] *= postfix # res[3]=6 * 1 , res[2]=2*4, res[1]=1*12, res[0]=1*24
+        print("postfix res",res) # 6 ,8,12,24
+        postfix *= nums[i] #1 * 4=4,4*3=12, 12*2 =24,24*1=24
         print(postfix)
 
-    x=nums(::-1)
-    print(x)
-
 productOfArray([1,2,3,4])
+
